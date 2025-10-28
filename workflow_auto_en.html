@@ -44,7 +44,7 @@
             <section data-transition="fade-in slide-out">
                 <h3>Goals</h3>
                 <ul>
-                    <li>What is Workflow automation and orchestration?</li>
+                    <li>What is workflow automation and orchestration framework?</li>
                     <li>What are the popular workflow automation tools?</li>
                     <li>How to do metadata management at CASD?</li>
                 </ul>
@@ -62,116 +62,208 @@
                 </p>
 
                 <p>
-                    <ul>
+                <ul>
                     <small>
                         <li class="fragment"><em>Automation</em>: Executes pre-defined tasks automatically (Execution.)
                         </li>
                     </small>
                     <small>
-                        <li class="fragment"><em>Orchestration</em>: Ensures multiple automated components run in the right order, with state tracking, error handling, and data passing between them. (Coordination)
+                        <li class="fragment"><em>Orchestration</em>: Ensures multiple automated components run in the
+                            right order, with state tracking, error handling, and data passing between them.
+                            (Coordination)
                         </li>
                     </small>
 
                 </ul>
                 </p>
 
-
             </section>
+
             <section>
-                <h3>Data governance key concepts:</h3>
-                <img src="assets/introduction_of_data_governance_terms.jpg"
-                     alt="introduction_of_data_governance_terms.jpg" style="width:50%; height:auto;"/>
+                <h3>Key concepts in workflow automation and orchestration framework:</h3>
 
                 <ul>
                     <small>
-                        <li class="fragment"><em>People</em>: who have the right to <span style="font-weight: bold;">make the decisions and accountable</span>
-                            for
-                            them.
+                        <li class="fragment"><em>Task</em> : The smallest executable unit (e.g. function, script, or
+                            command).
                         </li>
                     </small>
                     <small>
-                        <li class="fragment"><em>Policies</em>: what <span
-                                style="font-weight: bold;">decisions/rules</span> must be made to ensure effective
-                            management and use of data.
+                        <li class="fragment"><em>Flow / DAG </em> : A sequence of tasks, rules, and dependencies
+                            designed to achieve a specific outcome. It can be represented as a directed acyclic graph.
                         </li>
                     </small>
                     <small>
-                        <li class="fragment"><em>Metrics</em>: how to <span
-                                style="font-weight: bold;">measure/evaluate</span> if <span style="font-weight: bold;">decisions/rules</span>
-                            are respected.
+                        <li class="fragment"><em>Task Dependency</em> : Orders(e.g. upstream/downstream) and trigger
+                            conditions between tasks.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Scheduling and Triggers</em> : Decides when to start flows (e.g. time,
+                            event, manual).
+                        </li>
+                    </small>
+
+                    <small>
+                        <li class="fragment"><em>Executor / Worker</em> : Executes tasks on designated
+                            infrastructure(e.g. local, Docker, cluster).
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Task State Management</em> : Tracks states of each task(e.g. running,
+                            success, retry, fail, cancel).
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Logger</em> : Records logs, metrics, and events for task monitoring and
+                            debugging.
+                        </li>
+                    </small>
+
+                    <small>
+                        <li class="fragment"><em>Error Handling and retry</em> : Handle failed tasks(e.g. retry, ignore,
+                            stop, etc.).
                         </li>
                     </small>
                 </ul>
 
                 <aside class="notes">
-                    For example, if someone asks to access data, who can decide whether we grant access to the user or
-                    not.
-                    For example, before publishing data, the data must pass the `quality control` and `privacy control`,
-                    etc.
-                    For example, to control the `data quality`, we need to define the `metrics for data accuracy,
-                    completeness, etc`.
+
                 </aside>
             </section>
-
-        </section>
-
-        <!--Slide 3: data management-->
-        <section data-transition="fade-in slide-out">
-            <!--Slide 3-1: data governance vs data management -->
-            <section id="data governance vs data management">
-                <h3>Data governance vs Data management</h3>
-                <p class="left-align">
-                    <em>Data management</em> is an entire suite of <span style="font-weight: bold;">practices, processes, systems and tools</span>
-                    which implement the <em>data governance</em> definitions.
-                </p>
-
-                <ul>
-
-                    <li class="fragment"><em>Data governance</em>: defines the policies and accountability(i.e. what
-                        must be done and why.)
-                    </li>
-
-                    <li class="fragment"><em>Data management</em>: enforces the policies(i.e. how it gets done in
-                        practice.)
-                    </li>
-
-                </ul>
-
-            </section>
-            <!--Slide 3-2: key concept in data management-->
             <section>
-                <h3>Kep concepts in data management:</h3>
+                <h3>Automation VS Orchestration</h3>
+
+
+                <h4>Automation:</h4>
+                <ul>
+                    <li class="fragment"><em>Scope</em> : Focus on a single task</li>
+                    <li class="fragment"><em>Goal</em> : To avoid manual execution</li>
+                    <li class="fragment"><em>Example</em> : User needs to run a spark job daily to analyze logs</li>
+                </ul>
+
+
+                <h4>Orchestration:</h4>
+                <ul>
+                    <li class="fragment"><em>Scope</em> : Focus on multiple tasks and their orders, dependencies
+                    </li>
+                    <li class="fragment"><em>Goal</em> : Ensure end-to-end workflow consistency</li>
+                    <li class="fragment"><em>Example</em> : Run extract → transform → validate → load tasks, in
+                        sequence
+                    </li>
+                </ul>
+
+            </section>
+
+        </section>
+
+        <!--Slide 3: advantage and disadvantage-->
+        <section data-transition="fade-in slide-out">
+            <!--Slide 3-1: Advantages -->
+            <section>
+                <h3>Advantages of workflow automation</h3>
+
 
                 <ul>
 
-                    <li class="fragment"><em>Data Principals</em>: defines data ownership, accountability, ethics,
-                        compliance, etc.
+                    <small>
+                        <li class="fragment"><em>Reliability</em> : Automated workflow execution, recovery and retries
+                            reduce manual work and human error
+                        </li>
+                    </small>
+
+                    <small>
+                        <li class="fragment"><em>Reproducibility</em> : A complete workflow contains all details(e.g.
+                            scripts, input data, parameters, etc.) for a rerun.
+                        </li>
+                    </small>
+
+                    <small>
+                        <li class="fragment"><em>Auditability</em> : All historical output of workflow runs are logged
+                            which allow users to audit the workflow.
+                        </li>
+                    </small>
+
+                    <small>
+                        <li class="fragment"><em>Maintainability</em> : Modular tasks make unit testing easier, reusable
+                            tasks avoid code duplication.
+                        </li>
+                    </small>
+
+                    <small>
+                        <li class="fragment"><em>Scalability</em> : Multiple workers allow parallel task execution.
+                        </li>
+                    </small>
+
+                </ul>
+
+            </section>
+            <!--Slide 3-2: disadvantage-->
+            <section>
+                <h3>Disadvantages of workflow automation:</h3>
+
+                <ul>
+
+                    <li class="fragment"><em>Extra operational complexity</em> : Need to deploy and maintain new tools
+                        for automation and orchestration
                     </li>
 
-                    <li class="fragment"><em>Data Lifecycle</em>: describes the stages data goes through from creation
-                        to deletion in your
-                        organization.
+                    <li class="fragment"><em>Extra learning time</em> : Users need to learn how to develop and run
+                        workflow in specific tools (e.g. Prefect, airflow, etc.)
                     </li>
 
-                    <li class="fragment"><em>Data Quality</em>: measures how fit data is for its intended use
+                    <li class="fragment"><em>Extra infrastructure overhead</em> : Orchestration tools require many
+                        components (e.g. api server, worker, scheduler, etc) to run constantly.
                     </li>
 
-                    <li class="fragment"><em>Metadata Management</em>: facilitates the search and usage of data by
-                        providing context
-                    </li>
-
-                    <li class="fragment"><em>Data Security</em>: protects data against unauthorized access, corruption,
-                        or loss.
-                    </li>
 
                 </ul>
             </section>
         </section>
 
+        <!--Slide 4: Existing tools -->
 
-        <!--Slide 4: What is metadata management-->
+        <section>
+            <section>
+                <h3>Existing workflow automation and orchestration tools(1)</h3>
+                <ul>
+
+                    <li class="fragment"><a href="https://airflow.apache.org/">Airflow</a> : Works on all types of infra
+                        (e.g. bare-metal, VMs and containers), very mature solution, large user base, provide many operators(e.g. bash,
+                        python, sql, etc.). Only works on linux OS.
+                    </li>
+                    <li class="fragment"><a href="https://www.prefect.io/">Prefect</a> : Python centric, modern UI,
+                        cross-platform
+                    </li>
+                    <li class="fragment"><a href="https://dagster.io/">Dagster</a> : Data centric orchestrator, provide best support for unit testing.
+                    </li>
+
+
+                </ul>
+            </section>
+
+            <section>
+                <h3>Existing workflow automation and orchestration tools(2)</h3>
+                <ul>
+
+                    <li class="fragment"><a href="https://github.com/spotify/luigi">Luigi</a> : Easy to install as
+                        python a package, Lightweight scheduling, suitable for small and median workflow.
+                    </li>
+                    <li class="fragment"><a href="https://argoproj.github.io/workflows/">Argo Workflow</a> : Use yaml
+                        for workflow definition, Kubernetes-native(and only works on k8s)
+                    </li>
+                    <li class="fragment"><a href="https://www.mage.ai/data">Mage</a> : Very powerful tool with AI assistance, but requires License
+                    </li>
+
+                </ul>
+            </section>
+
+
+        </section>
+
+        <!--Slide 5: General steps for using a workflow automation framework-->
         <section data-transition="fade-in slide-out">
-            <!-- Slide 4-1: What is metadata? -->
+            <!-- Slide 5-1: General steps for using a workflow automation framework -->
             <section>
                 <h3>What is metadata?</h3>
                 <p><em>ISO/IEC 11179</em>: metadata (information objects) are data about Data Elements, Value
@@ -186,7 +278,7 @@
                         and managing data</span> easier. </p>
 
             </section>
-            <!-- Slide 4-2: What is metadata? -->
+            <!-- Slide 5-2: What is metadata? -->
             <section>
                 <h3>Descriptive Metadata: What is the data asset about?</h3>
                 <p>The <em>descriptive metadata</em> explains the data content and meaning, It helps user to discover
@@ -251,7 +343,8 @@
 
             <section>
                 <h3>Administrative & Technical Metadata: How can the data asset be used?</h3>
-                <p>The <em>Administrative & Technical Metadata</em> defines usage constraints, format, and access methods. It guides safe,
+                <p>The <em>Administrative & Technical Metadata</em> defines usage constraints, format, and access
+                    methods. It guides safe,
                     legal, and efficient data usage.</p>
                 <ul>
                     <li>Format: CSV</li>
@@ -350,7 +443,9 @@
                     </li>
                     <li class="fragment"><em>Lineage Tracking</em>: End-to-end data flow visualization.
                     </li>
-                    <li class="fragment"><em>Collaboration</em>: Announcements, tasks, Activity feed, team conversations, etc.</li>
+                    <li class="fragment"><em>Collaboration</em>: Announcements, tasks, Activity feed, team
+                        conversations, etc.
+                    </li>
                     <li class="fragment"><em>Governance</em>: Teams, roles, policies, etc.</li>
                 </ul>
             </section>
