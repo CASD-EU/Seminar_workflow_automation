@@ -1,0 +1,13 @@
+# prefect.yaml
+name: prefect_test_project
+prefect-version: 3.4.24
+
+# it can have multiple deployments
+deployments:
+  # Deployment 2: ETL flow
+  - name: etl_asset_tracking
+    entrypoint: etl_asset_tracking.py:etl_asset_tracking
+    work_pool:
+      name: local-pool
+      type: process
+      tags: [spark, local]
