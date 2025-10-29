@@ -1,13 +1,14 @@
 # prefect.yaml
-name: prefect_test_project
+name: pengfei_prefect_quick_start
 prefect-version: 3.4.24
 
 # it can have multiple deployments
 deployments:
-  # Deployment 2: ETL flow
-  - name: etl_asset_tracking
-    entrypoint: etl_asset_tracking.py:etl_asset_tracking
+  # Deployment 1: simple ETL flow
+  - name: pengfei_simple_elt
+    entrypoint: simple_etl.py:start_flow
+    description: "This simple workflow shows how Prefect works"
     work_pool:
-      name: local-pool
+      name: pliu-pool
       type: process
-      tags: [spark, local]
+      tags: [test, local]

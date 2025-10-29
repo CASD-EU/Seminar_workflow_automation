@@ -19,7 +19,7 @@ def load(data:List[int]):
     print(f"Task3: Loading result {data}")
 
 @flow
-def etl_flow():
+def start_flow():
     # task 1
     data = extract()
     # task 2
@@ -29,4 +29,4 @@ def etl_flow():
 
 
 if __name__ == "__main__":
-    etl_flow()
+    start_flow()
