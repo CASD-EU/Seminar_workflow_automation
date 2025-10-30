@@ -1,13 +1,13 @@
 # prefect.yaml
-name: pengfei_prefect_quick_start
+name: pengfei_prefect_concurrency
 prefect-version: 3.4.24
 
 # it can have multiple deployments
 deployments:
   # Deployment 1: simple ETL flow
-  - name: pengfei_simple_elt
-    entrypoint: simple_etl.py:start_flow
-    description: "This simple workflow shows how Prefect works"
+  - name: pengfei_long_running_job
+    entrypoint: long_running_job.py:start_long_running_flow
+    description: "This simple workflow takes time to finish."
     work_pool:
       name: pliu-pool
       type: process
