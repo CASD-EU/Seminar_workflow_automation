@@ -55,7 +55,7 @@ def task2(input_str: str) -> list[str]:
 
 
 # ----- LEVEL 3: Main Orchestration Flow -----
-@flow(name="Main_Flow", description="This workflow read a book, then show total words count and unique words",
+@flow(name="Flow_with_params", description="This workflow read a book, then show total words count and unique words",
       version="1.0.0", log_prints=True)
 def main_flow(book_str: str) -> None:
     print("=== Main Flow Started ===")
