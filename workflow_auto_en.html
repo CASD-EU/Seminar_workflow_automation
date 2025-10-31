@@ -84,7 +84,7 @@
 
                 <ul>
                     <small>
-                        <li class="fragment"><em>Task</em> : The smallest executable unit (e.g. function, script, or
+                        <li class="fragment"><em>Task</em> : The atomic unit of computation (e.g. function, script, or
                             command).
                         </li>
                     </small>
@@ -265,116 +265,41 @@
         <section data-transition="fade-in slide-out">
             <!-- Slide 5-1: General steps for using a workflow automation framework -->
             <section>
-                <h3>What is metadata?</h3>
-                <p><em>ISO/IEC 11179</em>: metadata (information objects) are data about Data Elements, Value
-                    Domains, and other reusable
-                    semantic and representational information objects that describe the meaning and technical details of
-                    a data item.</p>
 
-                <p><em>My definition </em>: metadata is structured information that describes one or more aspects(e.g.
-                    format, size, purpose, etc.) of a data entity.
-                    In general, Metadata is used to summarize basic information about data which can make <span
-                            style="font-weight: bold;">finding, tracking, using,
-                        and managing data</span> easier. </p>
 
             </section>
             <!-- Slide 5-2: What is metadata? -->
             <section>
-                <h3>Descriptive Metadata: What is the data asset about?</h3>
-                <p>The <em>descriptive metadata</em> explains the data content and meaning, It helps user to discover
-                    and
-                    understand data</p>
-                <ul>
-                    <li>Schema, distinct value, nullable, etc.</li>
-                    <li>Content descriptions (tables, columns)</li>
-                    <li>Keywords or tags</li>
-                    <li>Themes or categories</li>
-                </ul>
 
 
             </section>
             <section>
-                <h3>Context Metadata: Why does the data asset exist?</h3>
-                <p>The <em>Context Metadata</em> explains the context, goals, and justification. It ties data to
-                    organizational objectives and compliance.</p>
-                <ul>
-                    <li>Compliance rules</li>
-                    <li>Impact analysis</li>
-                </ul>
+
 
             </section>
 
             <section>
-                <h3>Lineage Metadata: Where is the data asset from?</h3>
-                <p>The <em>Lineage Metadata</em> tracks the origin and transformations of the data. It enables
-                    traceability,
-                    impact analysis, and debugging.</p>
-                <ul>
-                    <li>Data source</li>
-                    <li>Transformation</li>
-                    <li>Destination</li>
-                </ul>
+
 
             </section>
 
             <section>
-                <h3>Ownership Metadata: Who is responsible for the data asset?</h3>
-                <p>The <em>Ownership Metadata</em> assigns accountability. It clarifies responsibility for quality,
-                    compliance, and issue resolution.</p>
-                <ul>
-                    <li>Data provider</li>
-                    <li>Data Owner</li>
-                    <li>Data consumer</li>
-                </ul>
+
 
             </section>
 
             <section>
-                <h3>Temporal Metadata: When was the data asset created and updated?</h3>
-                <p>The <em>Temporal Metadata</em> captures timestamps and version history. It supports auditing,
-                    compliance, and time-sensitive decisions.</p>
-                <ul>
-                    <li>Creation date</li>
-                    <li>Last update date</li>
-                    <li>Version</li>
-                </ul>
+
 
             </section>
 
             <section>
-                <h3>Administrative & Technical Metadata: How can the data asset be used?</h3>
-                <p>The <em>Administrative & Technical Metadata</em> defines usage constraints, format, and access
-                    methods. It guides safe,
-                    legal, and efficient data usage.</p>
-                <ul>
-                    <li>Format: CSV</li>
-                    <li>Encoding: UTF-8</li>
-                    <li>Access method: Rest API endpoint</li>
-                    <li>Privacy policy: Contains personal data, GDPR applies</li>
-                    <li>Retention policy: Keep for 7 years</li>
-                </ul>
+
 
             </section>
             <!-- Slide 4-3: What is metadata management? -->
             <section>
-                <h3>What is metadata management?</h3>
 
-                <ul>
-                    <li class="fragment"><em>Designing metadata model</em>: Gathering requirements, and identifying
-                        which metadata need to be collected
-                    </li>
-                    <li class="fragment"><em>Creating metadata</em>: Gathering the metadata of essential data entities.
-                    </li>
-                    <li class="fragment"><em>Storing metadata</em>: Centralizing and standardizing metadata in a
-                        repository.
-                    </li>
-                    <li class="fragment"><em>Using metadata</em>: Providing tools to search/discover, understand and
-                        trace data by using metadata.
-                    </li>
-                    <li class="fragment"><em>Auditing metadata</em>: Check if the collected metadata is correct and
-                        fulfils the requirements.
-                    </li>
-                </ul>
             </section>
 
         </section>
@@ -383,12 +308,7 @@
         <!--Slide 5: Metadata management tools-->
         <section>
             <section>
-                <h3>Popular metadata management tools</h3>
-                <p>There are many <em>Metadata Management</em> tools, CASD has tested most of the opensource solutions.
-                </p>
 
-                <img src="assets/metadata_management_tools_classification.jpg"
-                     alt="Metadata_management_tools_classification.jpg" style="width:70%; height:auto;"/>
             </section>
 
         </section>
@@ -397,74 +317,25 @@
         <section data-transition="fade-in slide-out">
             <!--Slide 6-1: Openmetdata introduction-->
             <section>
-                <h3>What is open metadata?</h3>
-                <p><em>Open Metadata</em> is an open-source, modern metadata management tool. It provides:</p>
-                <ul>
-                    <li>Unified metadata storage</li>
-                    <li>Centralized data catalog with powerful search engine</li>
-                    <li>Collaboration features(e.g. tasks, team conversations, etc.) for better auditing</li>
-                </ul>
+
             </section>
             <!--Slide 6-2: Openmetdata Architecture-->
             <section>
-                <h3>Open metadata main components</h3>
-                <p><em>Open Metadata</em> platforms contains: web application, RDBMS, search engine, and workflow
-                    manager</p>
-                <img src="assets/om_architecture.png"
-                     alt="om_architecture.png" style="width:70%; height:auto;"/>
+
             </section>
             <!--Slide 6-3: Types of Metadata Managed by Open metadata-->
             <section>
-                <h3>Types of Metadata Managed by Open metadata</h3>
 
-                <ul>
-                    <li class="fragment"><em>Descriptive Metadata</em>: What is the data asset about?
-                    </li>
-                    <li class="fragment"><em>Context Metadata</em>: Why does the data asset exist?
-                    </li>
-                    <li class="fragment"><em>Lineage Metadata</em>: Where is the data asset from?
-                    </li>
-                    <li class="fragment"><em>Ownership Metadata</em>: Who is responsible for the data asset?
-                    </li>
-                    <li class="fragment"><em>Temporal Metadata</em>: When was the data asset created and updated?
-                    </li>
-                    <li class="fragment"><em>Administrative & Technical Metadata</em>: How can the data asset be used?
-                    </li>
-                </ul>
             </section>
             <!--Slide 6-3: Open metadata key features-->
             <section>
-                <h3>Open metadata key features</h3>
-                <ul>
-                    <li class="fragment"><em>Metadata ingestion framework</em>: connectors, rest-API, python-SDK
-                    </li>
-                    <li class="fragment"><em>Data discovery</em>: Data searchable by name(i.e. table, column),
-                        description, tags, owner, etc.
-                    </li>
-                    <li class="fragment"><em>Lineage Tracking</em>: End-to-end data flow visualization.
-                    </li>
-                    <li class="fragment"><em>Collaboration</em>: Announcements, tasks, Activity feed, team
-                        conversations, etc.
-                    </li>
-                    <li class="fragment"><em>Governance</em>: Teams, roles, policies, etc.</li>
-                </ul>
+
             </section>
             <section>
-                <h3>Advantage of Open metadata</h3>
-                <ul>
-                    <li>Open-source and extensible.</li>
-                    <li>Support all metadata types.</li>
-                    <li>Enhances collaboration across teams.</li>
-                    <li>Strong community support.</li>
-                </ul>
+
             </section>
             <section>
-                <h3>Disadvantage of Open metadata</h3>
-                <ul>
-                    <li>Deployment and setup are complex.</li>
-                    <li>Ingestion framework requires many development time</li>
-                    <li>May need customization for specific needs.</li>
-                </ul>
+
             </section>
         </section>
 
@@ -472,12 +343,6 @@
         <section data-transition="fade-in slide-out">
             <!-- Slide 7-1: overview      -->
             <section>
-                <h2>Open metadata in practice</h2>
-                <ul>
-                    <li>Metadata ingestion</li>
-                    <li>Use metadata to discover data</li>
-                    <li>Use collaboration features to improve metadata(audit).</li>
-                </ul>
 
             </section>
 
