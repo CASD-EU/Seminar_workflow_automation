@@ -11,7 +11,7 @@ from prefect import task, flow
     log_prints=True,)
 def task1(input_data: str)->str:
     msg = f"receive data: {input_data}"
-    print(f"The input value is {input_data}")
+    print(f"Task1: The input value is {input_data}")
     return msg
 
 
@@ -24,7 +24,7 @@ def task1(input_data: str)->str:
     persist_result=False,
     log_prints=True,)
 def task2():
-    print(f"Running task 2")
+    print(f"Task2: Running task 2")
 
 
 @task(
@@ -36,11 +36,11 @@ def task2():
     persist_result=False,
     log_prints=True,)
 def task3():
-    print(f"Running task 3")
+    print(f"Task3: Running task 3")
 
 
 @flow(
-    name="my_workflow",
+    name="workflow_with_params",
     description="this a test workflow",
     version="1.0.0",
     retries=2,
@@ -53,8 +53,8 @@ def task3():
 )
 def my_flow(param1: str, param2: int = 0):
     r1 =task1(param1)
-    r2 =task2()
-    task3(wait_for=[r1,r2])
+    task2()
+    task3()
 
 
 if __name__ == "__main__":

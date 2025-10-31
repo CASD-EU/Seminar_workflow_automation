@@ -9,9 +9,12 @@ deployments:
     version: "1.0.0"
     tags: [test, local]
     description: "This workflow test task and flow with various parameters"
-    entrypoint: task_flow_param_example.py:my_flow
+    entrypoint: flows/task_flow_param_example.py:my_flow
     work_pool:
       name: pliu-pool
       work_queue_name: default
       type: process
+      job_variables:
+        env:
+          PREFECT_LOGGING_LEVEL: INFO
 

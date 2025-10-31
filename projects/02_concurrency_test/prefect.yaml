@@ -6,7 +6,7 @@ prefect-version: 3.4.24
 deployments:
   # Deployment 1: simple ETL flow
   - name: pengfei_long_running_job
-    entrypoint: long_running_job.py:start_long_running_flow
+    entrypoint: flows/long_running_job.py:start_long_running_flow
     description: "This simple workflow takes time to finish."
     work_pool:
       name: pliu-pool

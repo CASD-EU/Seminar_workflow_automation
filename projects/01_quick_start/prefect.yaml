@@ -6,7 +6,7 @@ prefect-version: 3.4.24
 deployments:
   # Deployment 1: simple ETL flow
   - name: pengfei_simple_elt
-    entrypoint: simple_etl.py:start_flow
+    entrypoint: flows/simple_etl.py:start_flow
     description: "This simple workflow shows how Prefect works"
     work_pool:
       name: pliu-pool
