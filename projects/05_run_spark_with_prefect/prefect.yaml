@@ -1,0 +1,25 @@
+# prefect.yaml
+name: deployment_in_prefect
+prefect-version: 3.4.24
+
+# it can have multiple deployments
+deployments:
+  # Deployment 1: ETL flow
+  - name: deploy_flow_with_yaml
+    version: "1.0.0"
+    tags: [test, local]
+    description: "This deployment deploy a workflow via prefect.yaml"
+    entrypoint: flows/deploy_flow_with_params.py:main_flow
+    work_pool:
+      name: pliu-pool
+      work_queue_name: default
+      type: process
+      job_variables:
+        env:
+          PREFECT_LOGGING_LEVEL: INFO
+    schedule:
+      interval: 900        # seconds (900s = 15 minutes)
+      anchor_date: "2025-11-03T00:00:00Z"  # optional: start reference time (UTC)
+      timezone: "Europe/Paris"             # optional: local timezone
+      active: true                         # enable/disable scheduling
+
