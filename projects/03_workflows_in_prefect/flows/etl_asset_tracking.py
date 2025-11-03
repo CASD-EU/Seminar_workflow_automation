@@ -3,7 +3,6 @@ from prefect.assets import materialize
 
 
 @materialize("file://pengfei_data/raw_data.csv")
-@task(log_prints=True)
 def extract():
     data = [1, 2, 3]
     msg = f"Task1: Extracting data: {data}"
@@ -13,7 +12,6 @@ def extract():
     return data
 
 @materialize("file://pengfei_data/clean_data.csv", asset_deps=["file://pengfei_data/raw_data.csv"])
-@task(log_prints=True)
 def transform(data):
     print(f"Task2: Transforming data: {data}")
     return [x * 10 for x in data]

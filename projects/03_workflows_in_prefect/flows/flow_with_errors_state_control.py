@@ -1,4 +1,5 @@
 from prefect import flow, task
+from prefect.states import Completed, Failed
 
 
 @task(name="Task_1", description="task 1 will divide 10 by the given number x with error handling", log_prints=True)
@@ -26,17 +27,23 @@ def task3(y1: int, y2: int) -> None:
     print(f"Receive value from task_2: {y2}, corresponding result is: {10 * y2}")
 
 
-@flow(name="Flow_with_error_improved", description="This workflow contains a task which can raise ZeroDivisionError",
+@flow(name="Flow_with_error_state_control", description="This workflow contains a task which can raise ZeroDivisionError, we handle the error with task state",
       version="1.0.0", log_prints=True)
 def handle_error_flow(x: int):
     # run task 1
-    t1_resu = task1(x)
+    t1_state_resu = task1(x, return_state=True)
+    t1_resu = t1_state_resu.result()
     print("Completed Task 1")
     # tun task 2, need to handle exception
-    try:
-        t2_resu = task2(x)
-    except ZeroDivisionError:
+    t2_state_resu = task2(x, return_state=True)
+    print(f"t2 result with state: {t2_state_resu}")
+    if t2_state_resu.is_completed():
+        t2_resu = t2_state_resu.result()
+    elif t2_state_resu.is_failed():
         print("Main flow: The task 2 has failed, use the default value 0")
+        t2_resu = 0
+    else:
+        print(f"Main flow: unkown state: {t2_state_resu.name}")
         t2_resu = 0
     print("Completed Task 2")
     # run task3

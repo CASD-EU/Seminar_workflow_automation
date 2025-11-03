@@ -34,13 +34,14 @@ def handle_error_flow(x: int):
     print("Completed Task 1")
     # tun task 2, need to handle exception
     try:
-        t2_resu = task2.submit(x)
+        t2_resu = task2(x)
     except ZeroDivisionError:
-        print("Main flow: The task 1 has failed, use the default value")
+        print("Main flow: The task 2 has failed, use the default value 0")
         t2_resu = 0
     print("Completed Task 2")
     # run task3
-    task3(t1_resu, t2_resu)
+    # try to replace the below line with task3(wait_for=[t1_resu, t2_resu]), see what happens
+    task3(wait_for=[t1_resu, t2_resu],y1=t1_resu,y2=t2_resu)
     print("Completed Task 3")
 
 
