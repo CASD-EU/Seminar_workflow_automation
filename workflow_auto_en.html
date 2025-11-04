@@ -229,13 +229,15 @@
                 <ul>
 
                     <li class="fragment"><a href="https://airflow.apache.org/">Airflow</a> : Works on all types of infra
-                        (e.g. bare-metal, VMs and containers), very mature solution, large user base, provide many operators(e.g. bash,
+                        (e.g. bare-metal, VMs and containers), very mature solution, large user base, provide many
+                        operators(e.g. bash,
                         python, sql, etc.). Only works on linux OS.
                     </li>
                     <li class="fragment"><a href="https://www.prefect.io/">Prefect</a> : Python centric, modern UI,
                         cross-platform
                     </li>
-                    <li class="fragment"><a href="https://dagster.io/">Dagster</a> : Data centric orchestrator, provide best support for unit testing.
+                    <li class="fragment"><a href="https://dagster.io/">Dagster</a> : Data centric orchestrator, provide
+                        best support for unit testing.
                     </li>
 
 
@@ -252,7 +254,8 @@
                     <li class="fragment"><a href="https://argoproj.github.io/workflows/">Argo Workflow</a> : Use yaml
                         for workflow definition, Kubernetes-native(and only works on k8s)
                     </li>
-                    <li class="fragment"><a href="https://www.mage.ai/data">Mage</a> : Very powerful tool with AI assistance, but requires License
+                    <li class="fragment"><a href="https://www.mage.ai/data">Mage</a> : Very powerful tool with AI
+                        assistance, but requires License
                     </li>
 
                 </ul>
@@ -261,44 +264,25 @@
 
         </section>
 
-        <!--Slide 5: General steps for using a workflow automation framework-->
+        <!--Slide 5: workflow automation framework in CASD-->
         <section data-transition="fade-in slide-out">
             <!-- Slide 5-1: General steps for using a workflow automation framework -->
             <section>
+                <h3>Workflow automation and orchestration in CASD</h3>
+                <p>
+                    <em>CASD</em> proposes two workflow automation tools: <span
+                        style="font-weight: bold;">Prefect</span> and <span style="font-weight: bold;">Airflow</span>
 
-
-            </section>
-            <!-- Slide 5-2: What is metadata? -->
-            <section>
-
-
-            </section>
-            <section>
-
-
-            </section>
-
-            <section>
-
-
-            </section>
-
-            <section>
-
-
-            </section>
-
-            <section>
-
-
-            </section>
-
-            <section>
-
-
-            </section>
-            <!-- Slide 4-3: What is metadata management? -->
-            <section>
+                </p>
+                <ul>
+                    <li class="fragment"><a href="https://airflow.apache.org/">Airflow</a> : For linux servers, and
+                        complex
+                        workflow which requires operator other than python (e.g. sql, bash, etc.).
+                    </li>
+                    <li class="fragment"><a href="https://www.prefect.io/">Prefect</a> : For Windows servers, python
+                        centric workflow
+                    </li>
+                </ul>
 
             </section>
 
@@ -308,45 +292,33 @@
         <!--Slide 5: Metadata management tools-->
         <section>
             <section>
+                <h3>Workflow automation and orchestration in practice</h3>
 
-            </section>
+                <ul>
+                    <small>
+                    <li class="fragment"><em>Setup prefect working environment</em> : Configure a virtual environment, install prefect client, connect to a server, specify your first workflow
+                    </li></small>
 
-        </section>
+                    <small><li class="fragment"><em>Work pool and worker management</em> : Learn how to create and configure work-pool and worker
+                    </li></small>
 
-        <!--Slide 6: Openmetadata-->
-        <section data-transition="fade-in slide-out">
-            <!--Slide 6-1: Openmetdata introduction-->
-            <section>
+                    <small><li class="fragment"><em>Workflow management</em> : Learn how to define tasks and workflow
+                    </li></small>
 
-            </section>
-            <!--Slide 6-2: Openmetdata Architecture-->
-            <section>
+                    <small><li class="fragment"><em>Deployment management</em> : Learn how to define a deployment in prefect
+                    </li></small>
 
-            </section>
-            <!--Slide 6-3: Types of Metadata Managed by Open metadata-->
-            <section>
+                     <small><li class="fragment"><em>Run spark in Prefect</em> : Learn how to run spark in Prefect and best practices
+                    </li></small>
 
-            </section>
-            <!--Slide 6-3: Open metadata key features-->
-            <section>
+                     <small><li class="fragment"><em>Compare with airflow</em> : Compare what we have learned from prefect with airflow
+                    </li></small>
 
-            </section>
-            <section>
 
-            </section>
-            <section>
-
+                </ul>
             </section>
         </section>
 
-        <!--Slide 7: Open metadata in CASD-->
-        <section data-transition="fade-in slide-out">
-            <!-- Slide 7-1: overview      -->
-            <section>
-
-            </section>
-
-        </section>
 
     </div>
 </div>
