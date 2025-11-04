@@ -5,11 +5,11 @@ prefect-version: 3.4.24
 # it can have multiple deployments
 deployments:
   # Deployment 1: ETL flow
-  - name: deploy_flow_with_yaml
+  - name: deploy_spark_with_prefect
     version: "1.0.0"
-    tags: [test, local]
-    description: "This deployment deploy a workflow via prefect.yaml"
-    entrypoint: flows/deploy_flow_with_params.py:main_flow
+    tags: [spark, local]
+    description: "This deployment deploy a spark workflow in prefect via prefect.yaml"
+    entrypoint: flows/spark_wc_flow.py:main_flow
     work_pool:
       name: pliu-pool
       work_queue_name: default
@@ -22,4 +22,6 @@ deployments:
       anchor_date: "2025-11-03T00:00:00Z"  # optional: start reference time (UTC)
       timezone: "Europe/Paris"             # optional: local timezone
       active: true                         # enable/disable scheduling
+    parameters:
+      target_words: ["data", "file"]
 

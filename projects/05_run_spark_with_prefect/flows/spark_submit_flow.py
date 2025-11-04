@@ -3,6 +3,7 @@ import subprocess
 from pathlib import Path
 import datetime
 
+# need to change the below value
 # get spark home with powershell  $Env:SPARK_HOME
 SPARK_HOME = Path(r"C:\Users\PLIU\Documents\Tool\spark\spark-3.5.2")
 BASE_DIR = Path(r"C:\Users\PLIU\Documents\git\Seminar_workflow_automation\projects\05_run_spark_with_prefect\spark_jobs")
@@ -36,6 +37,6 @@ def spark_flow(job_name: str, script_path: str, data_path: str):
 if __name__ == "__main__":
     spark_flow(
         job_name="pengfei_wc",
-        script_path=r"C:\jobs\pengfei\etl_job.py",
+        script_path=r"C:\Users\PLIU\Documents\git\Seminar_workflow_automation\projects\05_run_spark_with_prefect\spark_jobs\word_count.py",
         data_path=r"C:\data\raw\input.csv"
     )
