@@ -33,9 +33,9 @@ def main():
     df = spark.createDataFrame(counts, ["word", "count"])
 
     # Save result
-    df.write.mode("overwrite").csv(output_dir)
+    df.coalesce(1).write.mode("overwrite").csv(output_dir)
 
-    print(f"✅ Word count completed. Results saved to: {output_dir}")
+    print(f"Word count completed. Results saved to: {output_dir}")
 
     spark.stop()
 
