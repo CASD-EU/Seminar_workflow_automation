@@ -210,3 +210,5 @@ dc_venv/
 # dont track this file with git update-index --assume-unchanged conf/creds.py
 conf/creds.py
 wc_venv
+data/out
+data/spark_temp
