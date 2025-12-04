@@ -212,3 +212,5 @@ conf/creds.py
 wc_venv
 data/out
 data/spark_temp
+.python-version
+jars
