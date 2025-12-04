@@ -1,0 +1,13 @@
+[project]
+name = "seminar-workflow-automation"
+version = "0.1.0"
+description = "This is a repo for demonstrate prefect"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "apache-sedona[spark]>=1.8.0",
+    "notebook>=7.5.0",
+    "pandas>=2.3.3",
+    "prefect>=3.6.4",
+    "pyspark==3.5.7",
+]
